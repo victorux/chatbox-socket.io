@@ -1,8 +1,8 @@
-var http = require('http')
-import { Server } from "socket.io";
+const http = require('http')
+const socketIO = require('socket.io')
 
-const httpServer = http();
-const io = new Server(httpServer, {
+const httpServer = http.createServer();
+const io = new socketIO.Server(httpServer, {
   cors: {
     origin: [
     "https://chatbox-frontend-mu.vercel.app",
