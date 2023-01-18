@@ -1,4 +1,18 @@
-const io = require("socket.io").listen(server, {log:false, origins:'*:*'});
+import { createServer } from "http";
+import { Server } from "socket.io";
+
+const httpServer = createServer();
+const io = new Server(httpServer, {
+  cors: {
+    origin: [
+    "https://chatbox-frontend-mu.vercel.app",
+    "http://chatbox-frontend-mu.vercel.app",
+    "https://chatbox-frontend-38mh90vco-victorux.vercel.app",
+    "http://chatbox-frontend-38mh90vco-victorux.vercel.app",
+    ],
+    credentials: true
+  }
+});
 
 let users = [];
 
