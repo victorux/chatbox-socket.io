@@ -1,9 +1,4 @@
-const io = require("socket.io")(8900, {
-    cors: {
-        origin: "https://chatbox-frontend-mu.vercel.app/",
-
-    }
-});
+const io = require("socket.io").listen(server, {log:false, origins:'*:*'});
 
 let users = [];
 
