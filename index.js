@@ -1,17 +1,6 @@
-const http = require('http')
-const socketIO = require('socket.io')
-
-const httpServer = http.createServer();
-const io = new socketIO.Server(httpServer, {
-  cors: {
-    origin: [
-    "https://chatbox-frontend-mu.vercel.app",
-    "http://chatbox-frontend-mu.vercel.app",
-    "https://chatbox-frontend-38mh90vco-victorux.vercel.app",
-    "http://chatbox-frontend-38mh90vco-victorux.vercel.app",
-    ],
-  }
-});
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 let users = [];
 
