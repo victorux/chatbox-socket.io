@@ -10,7 +10,6 @@ const io = new Server(httpServer, {
     "https://chatbox-frontend-38mh90vco-victorux.vercel.app",
     "http://chatbox-frontend-38mh90vco-victorux.vercel.app",
     ],
-    credentials: true
   }
 });
 
